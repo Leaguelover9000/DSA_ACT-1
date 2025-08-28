@@ -108,7 +108,7 @@ void insertSorted(EPtr L,int data){
     insertPos(L, data, L->count);
 
     if(L->count == MAX){
-        return L;
+        return ;
     }
 
     for(int i = 0; i < L->count - 1; i++){
