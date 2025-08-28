@@ -51,8 +51,6 @@ void insertPos(EPtr L, int data, int pos){
         return ;
     }
 
-    EPtr *trav = &L;
-
     for(int i = L->count; i > pos; i--){
         L->elem[i] = L->elem[i-1];
     }
