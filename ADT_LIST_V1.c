@@ -18,7 +18,11 @@ int main(){
 
     List L = initialize(L);
 
-    L = insertPos(L,10,2);
+    L = insertPos(L,10,0);
+    L = insertPos(L,20,1);
+    L = insertPos(L,30,2);
+    L = insertPos(L,40,3);
+    L = insertPos(L,50,4);
     display(L);
     L = deletePos(L, 1);
     display(L);
@@ -34,11 +38,6 @@ int main(){
 List initialize(List L){
 
     L.count = 0;
-
-    for(int i = 0; i < 5; i++){
-        L.elem[i] = i + 1;
-        L.count++;
-    }
 
     return L;
 }
@@ -83,7 +82,7 @@ int locate(List L, int data){
         }
     }
 
-    return 0;
+    return -1;
 }
 
 List insertSorted(List L,int data){
@@ -94,8 +93,8 @@ List insertSorted(List L,int data){
         return L;
     }
 
-    for(int i = 0; i < L.count; i++){
-        for(int j = 0; j < L.count; j++){
+    for(int i = 0; i < L.count - 1; i++){
+        for(int j = 0; j < L.count - 1; j++){
             if(L.elem[j] > L.elem[j + 1]){
                 int temp = L.elem[j + 1];
                 L.elem[j + 1] = L.elem[j];
