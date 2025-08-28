@@ -36,6 +36,7 @@ int main(){
     int re = retrieve(L, 1);
     printf("Element in this index is: %d\n", re);
     display(L);
+    makeNULL(L);
 
     return 0;
 }
