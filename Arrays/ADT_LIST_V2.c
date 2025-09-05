@@ -43,6 +43,10 @@ int main(){
 
 void initialize(EPtr L){
 
+    for(int i = 0; i < MAX; i++){
+        L->elem[i] = 0;
+    }
+
     L->count = 0;
 }
 
@@ -56,8 +60,12 @@ void insertPos(EPtr L, int data, int pos){
         L->elem[i] = L->elem[i-1];
     }
 
-    L->elem[pos] = data;
-    L->count++;
+    if(L->elem[pos] == 0){
+        L->elem[pos] = data;
+        L->count++;
+    }else{
+        L->elem[pos] = data;
+    }
 }
 
 void deletePos(EPtr L, int pos){
